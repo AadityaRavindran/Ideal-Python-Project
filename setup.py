@@ -6,18 +6,30 @@ with open("README.md", "r") as fh:
 with open('requirements.txt') as f:
     requirements = f.read().splitlines()
 
+with open('test_requirements.txt') as f:
+    test_requirements = f.read().splitlines()
+
 setuptools.setup(
-    name="ringLord",
+    name="ring-lord",
     version="0.0.1",
     author="Aaditya Ravindran",
     description="Sample python module",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    install_requires=requirements,
-    packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
     ],
+    install_requires=requirements,
+    test_suite="pytest",
+    tests_require=test_requirements,
+    packages=["lord_of_the_rings"],
+    include_package_data=True,
+    zip_safe=False,
+    entry_points={
+        'console_scripts': [
+            'ring-lord = lord_of_the_rings.the_one_ring:main',
+        ],
+    },
     python_requires='>=3.7',
 )

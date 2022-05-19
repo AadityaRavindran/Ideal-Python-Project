@@ -1,0 +1,3 @@
+include README.md
+graft lord_of_the_rings/config/
+global-exclude *.py[cod]

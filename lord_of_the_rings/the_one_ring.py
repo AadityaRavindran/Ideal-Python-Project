@@ -1,3 +1,5 @@
+import pkg_resources
+
 from lord_of_the_rings.mortal_men_rings import the_nine
 from lord_of_the_rings.dwarf_rings import the_seven
 from lord_of_the_rings.elven_rings import the_three
@@ -12,11 +14,17 @@ def find_them():
 
 
 def bring_them_all_and_in_the_darkness_bind_them():
-    print("Method not supported yet.")
-    raise Exception
+    raise Exception("Bringing them all and\
+ in the darkness binding them not supported yet.")
 
 
-if __name__ == '__main__':
+def main():
     rule_them_all()
     find_them()
     bring_them_all_and_in_the_darkness_bind_them()
+
+
+if __name__ == '__main__':
+    sample_resource_loading = pkg_resources.resource_filename(
+        "lord_of_the_rings", "config/resources.json")
+    main()
