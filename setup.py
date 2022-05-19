@@ -21,7 +21,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     install_requires=requirements,
-    test_suite="pytest",
+    test_suite="test_lord_of_the_rings",
     tests_require=test_requirements,
     packages=["lord_of_the_rings"],
     include_package_data=True,
